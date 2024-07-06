@@ -13,12 +13,13 @@ function BlogDetail() {
     )
       .then((response) => response.json())
       .then((allData) => {
-        const selectedData = allData[id];
+        // Access the data at the specified index
+        const selectedData = allData[id]; 
 
         if (selectedData) {
           setData(selectedData);
         } else {
-          setData(null);
+          setData(null); // Handle the case where index is out of range
         }
         setIsPending(false);
       })
