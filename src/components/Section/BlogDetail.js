@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 function BlogDetail() {
-  const { id } = useParams(); // id is now the index (0, 1, 2, etc.)
+  const { id } = useParams();
   const [data, setData] = useState(null);
   const [isPending, setIsPending] = useState(false);
 
@@ -13,13 +13,12 @@ function BlogDetail() {
     )
       .then((response) => response.json())
       .then((allData) => {
-        // Access the data at the specified index
         const selectedData = allData[id]; 
 
         if (selectedData) {
           setData(selectedData);
         } else {
-          setData(null); // Handle the case where index is out of range
+          setData(null);
         }
         setIsPending(false);
       })
@@ -43,18 +42,18 @@ function BlogDetail() {
 
   return (
     <div className="container py-5">
-      <div className="mb-4 bg-light p-3 rounded">
+      <div className="mb-4 bg-light p-3 rounded d-flex flex-column">
         <h1 className="fw-bold text-center py-5">{data.judul}</h1>
         <img
           src={data.gambar}
           className="card-img-top rounded w-25 mx-auto"
           alt="Gambar untuk blog"
         />
-        <div className="card-body my-4">
-          <p className="card-title text-secondary">
+        <div className="card-body my-4 px-5 mx-5">
+          <p className="card-title text-secondary mx-lg-5 py-lg-5">
             Diunggah pada: {data.waktu.slice(0, 10)}
           </p>
-          <p className="card-text text-justify">{data.teks}</p>
+          <p className="card-text mx-lg-5 px-lg-5">{data.teks}</p>
         </div>
       </div>
     </div>

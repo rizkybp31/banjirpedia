@@ -9,6 +9,7 @@ import About from './components/Section/About';
 import Banjir from './components/Section/Banjir';
 import Emergency from './components/Section/Emergency';
 import BlogDetail from './components/Section/BlogDetail';
+import NotFound from './components/Section/NotFound';
 
 function App() {
   return (
@@ -36,6 +37,9 @@ function App() {
           </Route>
           <Route path="/call">
             <Emergency />
+          </Route>
+          <Route path="*">
+            <NotFound />
           </Route>
         </Switch>
         <Logo />
