@@ -49,7 +49,7 @@ function BlogDetail() {
           className="card-img-top rounded w-25 mx-auto"
           alt="Gambar untuk blog"
         />
-        <div className="card-body my-4 px-5 mx-5">
+        <div className="card-body my-4 px-lg-5 mx-lg-5">
           <p className="card-title text-secondary mx-lg-5 py-lg-5">
             Diunggah pada: {data.waktu.slice(0, 10)}
           </p>
