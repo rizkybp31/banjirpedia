@@ -77,8 +77,8 @@ export default function Emergency() {
                 <h2 className="card-title text-center fw-bold">{data.nomor}</h2>
                 <h4 className="card-text text-center">{data.nama}</h4>
                 <p className="p-3 text-center">{data.deskripsi}</p>
-                <a href={`tel://data.nomor`}>
-                  <Telephone size={40} color="#00000" />
+                <a href={`tel://${data.nomor}`}>
+                  <Telephone size={40} />
                 </a>
               </div>
             </div>
