@@ -1,3 +1,5 @@
+import { Telephone } from "react-bootstrap-icons";
+
 export default function Emergency() {
   const numbers = [
     {
@@ -70,11 +72,14 @@ export default function Emergency() {
             Nomor Darurat Kebencanaan
           </h1>
           {numbers.map((data) => (
-            <div className="card col-8 col-lg-4" key={data.id}>
-              <div className="card-body bg-light d-flex flex-column">
-                <a href="tel://082135306259" className="fs-2 text-decoration-none card-title text-center fw-bold">{data.nomor}</a>
+            <div className="card col-12 col-lg-4" key={data.id}>
+              <div className="card-body bg-light d-flex flex-column align-items-center justify-content-center">
+                <h2 className="card-title text-center fw-bold">{data.nomor}</h2>
                 <h4 className="card-text text-center">{data.nama}</h4>
                 <p className="p-3 text-center">{data.deskripsi}</p>
+                <a href={`tel://data.nomor`}>
+                  <Telephone size={40} color="#00000" />
+                </a>
               </div>
             </div>
           ))}
